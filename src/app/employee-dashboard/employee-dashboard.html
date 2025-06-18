@@ -1,0 +1,23 @@
+<div class="layout">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">SmartBiz</div>
+    <nav>
+      <a routerLink="/employee/add-customer" routerLinkActive="active">Add Customer</a>
+      <a routerLink="/employee/make-sale" routerLinkActive="active">Make Sale</a>
+      <a routerLink="/employee/view-products" routerLinkActive="active">View Products</a>
+      <a routerLink="/employee/view-customers" routerLinkActive="active">View Customers</a>
+      <a (click)="logout()">Logout</a>
+    </nav>
+  </div>
+
+  <!-- Main content -->
+  <div class="main">
+    <div class="header">Welcome, Employee 🙋‍♂️</div>
+
+    <!-- 👇 The router-outlet is now here -->
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

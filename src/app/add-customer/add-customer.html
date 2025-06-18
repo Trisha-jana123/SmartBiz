@@ -1,0 +1,31 @@
+<div class="form-page">
+  <div class="form-container">
+    <h2>Add Customer</h2>
+
+    <form (ngSubmit)="addCustomer()" #customerForm="ngForm">
+
+      <div class="form-group">
+        <label>Customer Name:</label>
+        <input [(ngModel)]="name" name="name" required pattern="^[A-Za-z ]+$" #nameField="ngModel">
+        <div *ngIf="nameField.invalid && nameField.touched" class="error-message">
+          Name must contain only alphabets and spaces.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Mobile No.:</label>
+        <input [(ngModel)]="mobile" name="mobile" required pattern="^[0-9]{10}$" #mobileField="ngModel">
+        <div *ngIf="mobileField.invalid && mobileField.touched" class="error-message">
+          Mobile must be exactly 10 digits.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Address:</label>
+        <input [(ngModel)]="address" name="address" required>
+      </div>
+
+      <button type="submit" [disabled]="customerForm.invalid">Add Customer</button>
+    </form>
+  </div>
+</div>

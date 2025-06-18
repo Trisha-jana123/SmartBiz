@@ -1,0 +1,32 @@
+<h1>Edit Customer</h1>
+
+<form (ngSubmit)="updateCustomer()" #editCustomerForm="ngForm" class="form-container">
+
+  <div class="form-group">
+    <label>Enter the Name of the Customer:</label>
+    <input [(ngModel)]="customer.name" name="name" required
+      pattern="^[A-Za-z ]+$"
+      #nameField="ngModel">
+    <div *ngIf="nameField.invalid && nameField.touched" style="color:red;">
+      Name should contain alphabets and spaces only.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Mobile No.:</label>
+    <input [(ngModel)]="customer.mobile" name="mobile" required
+      pattern="^[0-9]{10}$"
+      #mobileField="ngModel">
+    <div *ngIf="mobileField.invalid && mobileField.touched" style="color:red;">
+      Mobile must be exactly 10 digits.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Address:</label>
+    <input [(ngModel)]="customer.address" name="address" required>
+  </div>
+
+  <button type="submit" [disabled]="editCustomerForm.invalid">Update Customer</button>
+
+</form>

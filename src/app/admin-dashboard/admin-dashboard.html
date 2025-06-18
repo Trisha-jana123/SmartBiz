@@ -1,0 +1,27 @@
+<div class="layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2 class="logo">SmartBiz</h2>
+    <nav>
+      <a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+      <a routerLink="/admin/add-customer" routerLinkActive="active">Add Customer</a>
+      <a routerLink="/admin/add-product" routerLinkActive="active">Add Product</a>
+      <a routerLink="/admin/view-customers" routerLinkActive="active">View Customers</a>
+      <a routerLink="/admin/view-products" routerLinkActive="active">View Products</a>
+      <a routerLink="/admin/reports" routerLinkActive="active">Reports</a>
+
+      <a (click)="logout()">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main">
+    <header class="header">
+      <h1>Welcome, Admin 👑</h1>
+    </header>
+
+    <div class="content">
+      <router-outlet></router-outlet> <!-- This will load dashboard-summary -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<h2>Make a Sale</h2>
+
+<form (ngSubmit)="recordSale()" class="form-container">
+
+  <!-- Select Customer -->
+  <div class="form-group">
+    <label>Select Customer:</label>
+    <select [(ngModel)]="selectedCustomerId" name="customer" required>
+      <option [ngValue]="null" disabled selected>Select Customer</option>
+      <option *ngFor="let cust of customers" [ngValue]="cust.id">
+        {{ cust.name }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Select Product -->
+  <div class="form-group">
+    <label>Select Product:</label>
+    <select [(ngModel)]="selectedProductId" name="product" required>
+      <option [ngValue]="null" disabled selected>Select Product</option>
+      <option *ngFor="let prod of products" [ngValue]="prod.id">
+        {{ prod.name }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Quantity -->
+  <div class="form-group">
+    <label>Quantity:</label>
+    <input type="number" [(ngModel)]="quantity" name="quantity" required min="1" />
+  </div>
+
+  <!-- Submit -->
+  <button type="submit">Record Sale</button>
+</form>

@@ -1,0 +1,33 @@
+<h1>Edit Product</h1>
+
+<form (ngSubmit)="updateProduct()" #editProductForm="ngForm" class="form-container">
+
+  <div class="form-group">
+    <label>Product Name:</label>
+    <input [(ngModel)]="product.name" name="name" required
+      pattern="^[A-Za-z0-9 ()]+$"
+      #nameField="ngModel">
+    <div *ngIf="nameField.invalid && nameField.touched" style="color:red;">
+      Product name can have letters, numbers, spaces, and brackets ( ).
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Price:</label>
+    <input type="number" [(ngModel)]="product.price" name="price" required min="1" #priceField="ngModel">
+    <div *ngIf="priceField.invalid && priceField.touched" style="color:red;">
+      Price must be positive.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Stock:</label>
+    <input type="number" [(ngModel)]="product.stock" name="stock" required min="1" #stockField="ngModel">
+    <div *ngIf="stockField.invalid && stockField.touched" style="color:red;">
+      Stock must be at least 1.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="editProductForm.invalid">Update Product</button>
+
+</form>
