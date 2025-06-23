@@ -71,31 +71,38 @@
    Open your browser and visit:
 👉 http://localhost:4200
    ```
-📋 Sample Data (Stored in Services)
-Customers
-Rajesh Kumar – Bhubaneswar
+## 📋 Sample Data (Stored in Services)
 
-Sunita Sahu – Cuttack
+### 👨‍💼 Customers
 
-Akash Das – Puri
+| ID | Name           | Mobile      | Location     |
+|----|----------------|-------------|--------------|
+| 1  | Rajesh Kumar   | 9876543210  | Bhubaneswar  |
+| 2  | Sunita Sahu    | 8887654321  | Cuttack      |
+| 3  | Akash Das      | 9090909090  | Puri         |
+| 4  | Neha Mishra    | 7878787878  | Rourkela     |
 
-Neha Mishra – Rourkela
+### 📦 Products
 
-Products
-Item	Price (₹)	Stock
-Rice Bag 25kg	1200	10
-Cooking Oil 1L	160	30
-Toothpaste	55	50
-Notebook (200pg)	35	100
-Milk Packet 500ml	28	60
+| ID | Item Name           | Price (₹) | Stock |
+|----|----------------------|-----------|--------|
+| 1  | Rice Bag 25kg        | 1200      | 10     |
+| 2  | Cooking Oil 1L       | 160       | 30     |
+| 3  | Toothpaste           | 55        | 50     |
+| 4  | Notebook (200 pages) | 35        | 100    |
+| 5  | Milk Packet 500ml    | 28        | 60     |
 
-🔐 Role-Based Access Summary
-Feature	Admin ✅	Employee 👷
-Add/Edit/Delete Customers	✅	Add only
-Add/Edit/Delete Products	✅	❌
-Record Transactions	✅	✅
-View Reports/Charts	✅	❌
-Change Prices or Stock	✅	❌
+---
+
+## 🔐 Role-Based Access Summary
+
+| Feature                        | Admin ✅ | Employee 👷 |
+|-------------------------------|----------|-------------|
+| Add/Edit/Delete Customers     | ✅        | Add only    |
+| Add/Edit/Delete Products      | ✅        | ❌          |
+| Record Transactions/Sales     | ✅        | ✅          |
+| View Reports/Charts           | ✅        | ❌          |
+| Change Product Prices/Stock   | ✅        | ❌          |
 
 ## 📦 Project Structure
 
