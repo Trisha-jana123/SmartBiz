@@ -1,59 +1,145 @@
-# SmartBizApp
+# 💼 SmartBiz – Role-Based Digital Ledger (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
+**SmartBiz** is a role-based digital ledger application built with **Angular**, designed for small businesses. It simulates real-world shop operations with separate dashboards and permissions for **Admins** and **Employees**.
 
-## Development server
+> 🔐 Built with route guards, component-level access control, and local data storage — no backend or database required.
 
-To start a local development server, run:
+---
+
+## 👥 User Roles
+
+- **Admin** – Full access to all business operations and reports  
+- **Employee** – Limited access for daily sales and customer entry
+
+### 🧪 Sample Users
+
+| Username | Password | Role     |
+|----------|----------|----------|
+| admin    | admin123 | Admin    |
+| ravi     | ravi123  | Employee |
+| sita     | sita123  | Employee |
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: Angular
+- **Routing**: Angular Router with Role-Based Guards
+- **State Management**: Angular Services
+- **UI**: Bootstrap (or Angular Material)
+- **Storage**: In-memory arrays (no backend)
+
+---
+
+## 📌 Features
+
+### ✅ Admin Dashboard
+
+- Business summaries (customers, products, sales)
+- Add/Edit/Delete customers and products
+- View transactions and reports
+- Navigation Menu:
+  - Dashboard
+  - Customers
+  - Products
+  - Transactions
+  - Reports
+  - Logout
+
+### 👷 Employee Dashboard
+
+- Add new transactions (sales)
+- Add new customers
+- View products and customers (read-only)
+- Navigation Menu:
+  - Dashboard
+  - Make Sale
+  - Add Customer
+  - View Products
+  - Logout
+
+---
+
+## 🧑‍💻 How to Run Locally
+
+**Clone the repository**
+   ```bash
+   git clone https://github.com/Trisha-jana123/SmartBiz.git
+   cd SmartBiz
+   npm install
+   ng serve
+   Open your browser and visit:
+👉 http://localhost:4200
+   ```
+📋 Sample Data (Stored in Services)
+Customers
+Rajesh Kumar – Bhubaneswar
+
+Sunita Sahu – Cuttack
+
+Akash Das – Puri
+
+Neha Mishra – Rourkela
+
+Products
+Item	Price (₹)	Stock
+Rice Bag 25kg	1200	10
+Cooking Oil 1L	160	30
+Toothpaste	55	50
+Notebook (200pg)	35	100
+Milk Packet 500ml	28	60
+
+🔐 Role-Based Access Summary
+Feature	Admin ✅	Employee 👷
+Add/Edit/Delete Customers	✅	Add only
+Add/Edit/Delete Products	✅	❌
+Record Transactions	✅	✅
+View Reports/Charts	✅	❌
+Change Prices or Stock	✅	❌
+
+## 📦 Project Structure
 
 ```bash
-ng serve
+src/
+├── app/
+│ ├── add-customer/
+│ ├── add-product/
+│ ├── admin-dashboard/
+│ ├── dashboard-summary/
+│ ├── edit-customer/
+│ ├── edit-product/
+│ ├── employee-dashboard/
+│ ├── login/
+│ ├── make-sale/
+│ ├── reports/
+│ ├── view-customer/
+│ ├── view-products/
+│ ├── app.module.ts
+│ ├── app-routing.module.ts
+│ ├── app.component.ts
+│ ├── app.component.html
+│ ├── app.component.css
+│ ├── app.component.spec.ts
+│ ├── auth.guard.ts
+│ ├── auth.guard.spec.ts
+│ ├── auth.service.ts
+│ ├── auth.service.spec.ts
+│ ├── role-guard.ts
+│ ├── customer.service.ts
+│ ├── customer.service.spec.ts
+│ ├── product.service.ts
+│ ├── product.service.spec.ts
+│ ├── transaction.service.ts
+│ ├── transaction.service.spec.ts
+├── assets/
+├── index.html
+└── main.ts
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+   
